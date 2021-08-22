@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="interactivity/app.js" defer></script>
+</head>
+<body>
+    <fieldset> 
+        <legend>Authentification</legend>
+        <form method="post"
+            action="/api/login">
+            <input type="text"
+                name="username"
+                required>
+            <input type="password"
+                name="password"
+                required>
+            <input type="submit"
+                value="login">
+        </form>
+        <form method="put"
+             action="/api/register">
+            <input type="text"
+                name="username"
+                required>
+            <input type="email"
+                name="email"
+                required>
+            <input type="submit"
+                value="login">
+        </form>
+        <form method="get"
+             action="/api/isLoggedin">
+           
+            <input type="submit"
+                value="isLoggedin">
+        </form>
+    </fieldset>
+    <h1>ToDo App</h1>
+</body>
+</html>
