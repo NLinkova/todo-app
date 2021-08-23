@@ -1,3 +1,13 @@
 body {
     background-color: rgb(100, 210, 253);
 }
+
+input, label, textarea {
+    display: block;
+    width: 16em;
+}
+
+input:not(:placeholder-shown):not(:active) {
+    background-color: rgb(248, 210, 210);
+    box-shadow: rgb(230, 120, 120) .2em .2em .2em;
+}

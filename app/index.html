@@ -9,10 +9,12 @@
     <script src="interactivity/app.js" defer></script>
 </head>
 <body>
-    <fieldset> 
+    <h1>ToDo App</h1>
+    <fieldset>        
         <legend>Authentification</legend>
         <form method="post"
-            action="/api/login">
+            action="/api/login"
+            onsubmit="login(event)">
             <input type="text"
                 name="username"
                 required>
@@ -30,16 +32,96 @@
             <input type="email"
                 name="email"
                 required>
+            <input type="password"
+                name="password"
+                required>
             <input type="submit"
-                value="login">
+                value="register">
+        </form>     
+        <form method="get"
+            action="/api/doesuserexist">
+            <input type="text"
+                name="username">
+            <input type="submit"
+                value="does user exist">
         </form>
         <form method="get"
-             action="/api/isLoggedin">
-           
+            action="/api/isLoggedin">
             <input type="submit"
                 value="isLoggedin">
         </form>
     </fieldset>
-    <h1>ToDo App</h1>
+
+    <fieldset>
+        <legend>Todo Category</legend>
+        <form method="get"
+            action="/api/getcat">
+            <input type="submit"
+           value="get categories">
+        </form>
+        <form method="put"
+                action="/api/addcat">
+            <input type="text"
+                name="categoryname"
+                required>
+            <input type="submit"
+                value="add category">
+        </form>
+        <form method="delete"
+            action="/api/delcat">
+            <input type="hidden"
+                name="catid"
+                value="0">
+                <input type="text"
+                name="categoryname">
+            <input type="submit"
+           value="del category">
+        </form>
+        <form method="patch"
+            action="/api/updatecat">
+            <input type="hidden"
+                name="catid"
+                value="0">
+            <input type="submit"
+                value="edit category"
+                required>
+        </form>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Todo Items</legend>
+        <form method="get"
+            action="/api/gettodos">
+            <input type="submit"
+           value="get todo">
+        </form>
+        <form method="put"
+                action="/api/addtodo">
+            <input type="text"
+                name="todoname"
+                required>
+            <input type="submit"
+                value="add todos">
+        </form>
+        <form method="delete"
+            action="/api/deltodo">
+            <input type="hidden"
+                name="todoid"
+                value="0">
+                <input type="text"
+                name="todoname">
+            <input type="submit"
+           value="del todo">
+        </form>
+        <form method="patch"
+            action="/api/updatetodo">
+            <input type="hidden"
+                name="todoitem"
+                value="0">
+            <input type="submit"
+                value="edit todo"
+                required>
+        </form>
+    </fieldset>
 </body>
 </html>
